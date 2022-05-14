@@ -1,13 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
 body, html{
     margin: 0px;
     height: 100%;
+}
+
+*{
+    font-family: Roboto, sans-serif;
 }
 
 .container{
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 4fr;
+    --backdrop-color: gainsboro;
 }
+
+/*---------HEADER----------*/
 
 .header{
     grid-column: 2 / 3;
@@ -15,16 +24,34 @@ body, html{
     height: 150px;
 }
 
+.header .search{
+    display: grid;
+    width: 60%;
+    grid-template-columns: 24px 1fr;
+}
+
+.header .search .search-bar{
+    width: 80%;
+    --search-height: 24px;
+    height: var(--search-height);
+    background-color: var(--backdrop-color);
+    border-radius: calc(var(--search-height)/2);
+
+}
+
+/*---------SIDE BAR----------*/
+
 .sidebar{
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     display: grid;
     grid-template-rows: min-content;
     grid-auto-rows: min-content;
-    gap: 50px;
+    gap: 30px;
     background-color: rgb(25, 146, 212);
     color: white;
     font-weight: bold;
+    padding-left: 8px;
 }
 
 .sidebar button{
@@ -32,22 +59,32 @@ body, html{
     background-color: transparent;
     color: white;
     height: 25px;
-    font-size: 20px;
+    font-size: 1rem;
     display: flex;
     justify-content: start;
     align-items: center;
     gap: 24px;
+    padding-left: 14px;
 }
 
-.sidebar button img{
-    filter: invert(100%); 
+.sidebar button span{
+    font-size: 1rem;
 }
 
 .sidebar .logo{
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: min-content;
-    gap: 20px;
+    align-items: center;
+    gap: 16px;
+    padding: 6px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+.sidebar .logo span{
+    font-size: 2rem;
 }
 
 .sidebar .nav, .sidebar .help{
@@ -57,15 +94,19 @@ body, html{
     gap: 8px;
 }
 
+/*---------MAIN CONTENT----------*/
+
 .content{
     grid-column: 2 / 3;
-    grid-row: 2/3;
+    grid-row: 2 / 3;
     display: grid;
     grid-template-columns: 3fr 1fr;
-    background-color: rgb(200, 200, 200);
+    grid-template-rows: 1fr 1fr;
+    background-color: var(--backdrop-color);
 }
 
 .content .projects{
+    grid-row: 1 / span 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: min-content;
@@ -82,6 +123,7 @@ body, html{
     padding: 8px;
     border-left: 6px solid goldenrod;
     border-radius: 6px;
+    height: 150px;
 }
 
 .content .projects .card *{

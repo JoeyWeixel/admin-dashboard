@@ -103,6 +103,9 @@ body, html{
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr;
     background-color: var(--backdrop-color);
+    gap: 24px;
+
+    padding: 32px 16px;
 }
 
 .content .projects{
@@ -110,22 +113,48 @@ body, html{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: min-content;
-    gap: 16px;
+    gap: 24px;
 }
 
 .content .projects>p{
     grid-column: 1 / span 2;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0px 0px -16px;
 
 }
 
 .content .projects .card{
     background-color: white;
-    padding: 8px;
-    border-left: 6px solid goldenrod;
-    border-radius: 6px;
-    height: 150px;
+    padding: 32px 16px;
+    border-left: 6px solid #f2cf0a;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #B0B0B0;
+
+    display: grid;
+    grid-template-rows: min-content;
+}
+
+.content .card .title{
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.content .card .text{
+    height: 100px;
+    overflow: hidden;
+}
+
+.content .card .actions{
+    justify-self: end;
+    padding-right: 25px;
+}
+
+.content .actions span{
+    word-spacing: 16px;
 }
 
 .content .projects .card *{
     background-color: white;
+    margin: 0px;
 }
